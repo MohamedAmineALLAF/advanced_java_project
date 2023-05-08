@@ -1,0 +1,5 @@
+Honda,Civic,AB-123-CD,2020,Red,Gasoline
+Toyota,Corolla,CD-456-EF,2019,White,Diesel
+Ford,Mustang,EF-789-GH,2021,Black,Gasoline
+Chevrolet,Camaro,GH-246-JK,2018,Yellow,Gasoline
+Tesla,Model 3,JL-135-MN,2022,Blue,Electric

@@ -1,0 +1,39 @@
+{"carList":[
+ {
+  "ID": 1,
+  "Brand": "Honda",
+  "Model": "Civic",
+  "Registration number": "AB-123-CD",
+  "year": 2020,
+  "color": "Red",
+  "Fuel type": "Gasoline"
+ },
+ {
+  "ID": 2,
+  "Brand": "Toyota",
+  "Model": "Corolla",
+  "Registration number": "CD-456-EF",
+  "year": 2019,
+  "color": "White",
+  "Fuel type": "Diesel"
+ },
+ {
+  "ID": 3,
+  "Brand": "Ford",
+  "Model": "Mustang",
+  "Registration number": "EF-789-GH",
+  "year": 2021,
+  "color": "Black",
+  "Fuel type": "Gasoline"
+ },
+ {
+  "ID": "4",
+  "Brand": "Tesla",
+  "Model": "Model Y",
+  "Registration number": "JL-135-MN",
+  "year": 2022,
+  "color": "Blue",
+  "Fuel type": "Electric"
+ }
+]
+}
