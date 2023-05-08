@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44860c6f-ee99-437b-85e3-b2542cf3ca5a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/emsi/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inputData.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/emsi/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emsi/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emsi/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emsi/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emsi/service/OwnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/carInfo.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/carInfo.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/inputData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/inputData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/inputData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/inputData.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/inputDataX.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/inputDataX.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/outputData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/outputData.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,11 +55,13 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
-      "mariadb"
+      "mariadb",
+      "mysql"
     ]
   }
 }]]></component>
@@ -87,10 +90,21 @@
       <workItem from="1682431185277" duration="1097000" />
       <workItem from="1682432388716" duration="1569000" />
       <workItem from="1683285561022" duration="14003000" />
+      <workItem from="1683576181417" duration="5156000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

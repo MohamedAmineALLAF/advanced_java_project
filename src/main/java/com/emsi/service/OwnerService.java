@@ -19,9 +19,7 @@ public class OwnerService {
 
     }
     public void update(Owner owner) {
-
         ownerDao.update(owner);
-
     }
     public void remove(Owner owner) {
         ownerDao.deleteById(owner.getId());

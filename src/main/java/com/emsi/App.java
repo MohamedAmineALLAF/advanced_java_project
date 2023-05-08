@@ -33,6 +33,7 @@ public class App
             BufferedReader br = new BufferedReader(new FileReader("src/main/resources/InputData.txt"));
             Car c = null;
             String readLine = br.readLine();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
             while(readLine != null){
                 String [] car  = readLine.split(",");
@@ -40,7 +41,8 @@ public class App
                 c.setBrand(car[0].trim());
                 c.setModel(car[1].trim());
                 c.setRegistrationNumber(car[2].trim());
-                c.setRegistrationDate(new java.util.Date(car[3].trim()));
+                c.setRegistrationDate(dateFormat.parse(car[3].trim()));
+                c.getRegistrationDate();
                 c.setColor(car[4].trim());
                 c.setFuelType(car[5].trim());
                 list.add(c);
@@ -49,7 +51,7 @@ public class App
 
 
         }catch (Exception e){
-            System.out.println(e.getStackTrace());
+            e.printStackTrace();
         }
     }
 
@@ -83,8 +85,8 @@ public class App
         Map< String, Object[] > carinfo =
                 new TreeMap< String, Object[] >();
         carinfo.put( "1", new Object[] { "Brand", "Model", "registrationNumber","year","color","Fuel type" });
-        carinfo.put( "2", new Object[] { "Honda", "Civic", "AB-123-CD","2020","Red","Gasoline" });
-        carinfo.put( "3", new Object[] { "Ford", "Mustang", "EF-489-EZ","2016","Blue","Electric" });
+        carinfo.put( "2", new Object[] { "Honda", "Civic", "AB-123-CD","2020-10-31","Red","Gasoline" });
+        carinfo.put( "3", new Object[] { "Ford", "Mustang", "EF-489-EZ","2016-10-31","Blue","Electric" });
 
 
         //parcourir les données pour les écrire dans le fichier Excel
@@ -165,13 +167,13 @@ public class App
         System.out.println("----json----");
         readJSONFromTxtFile();
         System.out.println("----JDBC----");
+
         OwnerService ownerService = new OwnerService();
         for( Owner owner :ownerService.findAll())
             System.out.println(owner);
-        Owner owner1 = new Owner(4,"amine","allaf","Tangier",0674);
+
+        Owner owner1 = new Owner(6,"amine","allaf","Tangier",0674);
         ownerService.save(owner1);
         System.out.println("added");
-
-
     }
 }
