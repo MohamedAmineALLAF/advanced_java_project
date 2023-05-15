@@ -1,5 +1,0 @@
-Car(id=null, brand=Honda, model=Civic, registrationNumber=AB-123-CD, registrationDate=Sat Oct 31 00:00:00 WEST 2020, color=Red, fuelType=Gasoline, owner=null)
-Car(id=null, brand=Toyota, model=Corolla, registrationNumber=CD-456-EF, registrationDate=Mon Oct 21 00:00:00 WEST 2019, color=White, fuelType=Diesel, owner=null)
-Car(id=null, brand=Ford, model=Mustang, registrationNumber=EF-789-GH, registrationDate=Thu Oct 21 00:00:00 WEST 2021, color=Black, fuelType=Gasoline, owner=null)
-Car(id=null, brand=Chevrolet, model=Camaro, registrationNumber=GH-246-JK, registrationDate=Tue Feb 06 00:00:00 WET 2018, color=Yellow, fuelType=Gasoline, owner=null)
-Car(id=null, brand=Tesla, model=Model 3, registrationNumber=JL-135-MN, registrationDate=Mon Sep 05 00:00:00 WEST 2022, color=Blue, fuelType=Electric, owner=null)

@@ -27,7 +27,8 @@ import org.json.simple.parser.ParseException;
  */
 public class App 
 {
-    public static void readFromTextFile(ArrayList<Car> list) {
+    //fix files
+    /*public static void readFromTextFile(ArrayList<Car> list) {
 
         try {
             BufferedReader br = new BufferedReader(new FileReader("src/main/resources/InputData.txt"));
@@ -44,7 +45,7 @@ public class App
                 c.setRegistrationDate(dateFormat.parse(car[3].trim()));
                 c.getRegistrationDate();
                 c.setColor(car[4].trim());
-                c.setFuelType(car[5].trim());
+                c.setFuelType(Car.FuelType.valueOf(car[5].trim().toUpperCase()));;
                 list.add(c);
                 readLine = br.readLine();
             }
@@ -53,10 +54,10 @@ public class App
         }catch (Exception e){
             e.printStackTrace();
         }
-    }
+    }*/
 
-    static XSSFRow row;
-    public static void writeInOutputFile(ArrayList<Car> list){
+
+    /*public static void writeInOutputFile(ArrayList<Car> list){
         try( FileOutputStream fout = new FileOutputStream("src/main/resources/outputData.txt"))
         {
 
@@ -70,9 +71,9 @@ public class App
         catch (IOException e) {
             System.out.println(e.getStackTrace());
         }
-    }
+    }*/
 
-    public static void CreateAndWriteInStyleSheet() throws Exception{
+    /*public static void CreateAndWriteInStyleSheet() throws Exception{
         XSSFWorkbook workbook = new XSSFWorkbook();
 
         //Création d'un objet de type feuille Excel
@@ -88,7 +89,6 @@ public class App
         carinfo.put( "2", new Object[] { "Honda", "Civic", "AB-123-CD","2020-10-31","Red","Gasoline" });
         carinfo.put( "3", new Object[] { "Ford", "Mustang", "EF-489-EZ","2016-10-31","Blue","Electric" });
 
-
         //parcourir les données pour les écrire dans le fichier Excel
         Set< String > keyid = carinfo.keySet();
         int rowid = 0;
@@ -100,7 +100,7 @@ public class App
 
             for (Object obj : objectArr) {
                 Cell cell = row.createCell(cellid++);
-                cell.setCellValue((String)obj);
+                cell.setCellValue((String)obj);//fix
             }
         }
 
@@ -109,7 +109,7 @@ public class App
         workbook.write(out);
         out.close();
         System.out.println("Travail bien fait!!!");
-    }
+    }*/
 
     public static void readJSONFromTxtFile() throws FileNotFoundException, IOException, ParseException {
         JSONParser parser = new JSONParser();
@@ -127,7 +127,7 @@ public class App
         }
     }
 
-    public static void readFromStyleSheet(){
+    /*public static void readFromStyleSheet(){
         try(FileInputStream fis = new FileInputStream(new File("src/main/resources/carInfo.xlsx")))
         {
             XSSFWorkbook workbook1 = new XSSFWorkbook(fis);
@@ -152,26 +152,43 @@ public class App
         catch (IOException e) {
             // TODO: handle exception
         }
-    }
+    }*/
+
+
 
     public static void main( String[] args ) throws Exception {
-        ArrayList<Car> list = new ArrayList<Car>();
-        System.out.println(list);
-        System.out.println("----text----");
-        readFromTextFile(list);
-        System.out.println(list);
-        writeInOutputFile(list);
-        System.out.println("----xlsx----");
-        CreateAndWriteInStyleSheet();
-        readFromStyleSheet();
-        System.out.println("----json----");
-        readJSONFromTxtFile();
-        System.out.println("----JDBC----");
-
+        CarService carService= new CarService();
         OwnerService ownerService = new OwnerService();
+        System.out.println("*****CAR*****");
+        System.out.println("----Text----");
+        System.out.println("----*Read----");
+        carService.readFromTextFile(new FileReader("src/main/resources/InputData.txt"));
+        System.out.println("----*write----");
+        carService.writeInOutputFile("src/main/resources/outputData.txt");
+        System.out.println("----Excel----");
+        System.out.println("----*Read----");
+        carService.readFromStyleSheet(new File("src/main/resources/carInfo.xlsx"));
+        System.out.println("----*write----");
+        carService.createAndWriteInStyleSheet(new File("src/main/resources/inputDataX.xlsx"));
+        System.out.println("----JSON----");
+        System.out.println("----*read---");
+        carService.readJsonFromTextFile("src/main/resources/inputDataJson.txt");
+        System.out.println("----*write--");
+        System.out.println("----JDBC----");
+        System.out.println("----*read--");
+        //carService.readFromDatabaseToTextFile("src/main/resources/cars.txt");
+        System.out.println("-----------------------");
+        System.out.println("*****OWNER*****");
+        System.out.println("----Text----");
+        System.out.println("----*Read----");
+        ownerService.readFromTextFile(new FileReader("src/main/resources/inputDataOwners.txt"));
+        System.out.println("----*find all----");
         for( Owner owner :ownerService.findAll())
             System.out.println(owner);
-
+        System.out.println("----*readFromDatabase----");
+        ownerService.readFromDatabaseToTextFile();
+        //ownerService.readFromStyleSheetAndInsertInDatabase();
+        System.out.println("----*insert----");
         Owner owner1 = new Owner(6,"amine","allaf","Tangier",0674);
         ownerService.save(owner1);
         System.out.println("added");

@@ -17,4 +17,10 @@ public class Owner implements Serializable {
     private String CIN;
     private String address;
     private Integer phoneNumber;
+    //export to services
+    //write from database
+    //check input type from int or date ??
+    //date enters as date or string ??
+    //save and update in one method(check and save or update)
+    
 }

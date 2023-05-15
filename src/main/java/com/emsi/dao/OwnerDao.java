@@ -1,7 +1,10 @@
 package com.emsi.dao;
 
+import com.emsi.entities.Car;
 import com.emsi.entities.Owner;
 
+import java.io.File;
+import java.io.FileReader;
 import java.util.List;
 
 public interface OwnerDao {
@@ -15,5 +18,10 @@ public interface OwnerDao {
 
     List<Owner> findAll();
 
+    List<Owner> readFromTextFile(FileReader fileReader);
+
+    void readFromDatabaseToTextFile();
+
+    void readFromStylSheetAndInsertInDatabase();
 
 }

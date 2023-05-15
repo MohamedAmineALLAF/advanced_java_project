@@ -23,7 +23,14 @@ public class Car implements Serializable {
     private String registrationNumber;
     private Date registrationDate;
     private String color;
-    private String fuelType;
+    private FuelType fuelType;//fix enum
     private Owner owner;
+
+    public enum FuelType {
+        GASOLINE,
+        DIESEL,
+        ELECTRIC,
+        HYBRID
+    }
 
 }
