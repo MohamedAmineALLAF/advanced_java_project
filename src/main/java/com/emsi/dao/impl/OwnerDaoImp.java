@@ -187,7 +187,6 @@ public class OwnerDaoImp implements OwnerDao {
 
     @Override
     public void readFromDatabaseToTextFile() {
-
         PreparedStatement ps = null;
         ResultSet rs = null;
         List<Owner> listOwner = new ArrayList<>();
@@ -195,18 +194,14 @@ public class OwnerDaoImp implements OwnerDao {
             ps = conn.prepareStatement("SELECT * FROM owner");
             rs = ps.executeQuery();
             FileOutputStream fout = new FileOutputStream("src/main/resources/owners.txt");
-
             while (rs.next()) {
                 Owner owner = new Owner();
-
                 owner.setId(rs.getInt("Id"));
                 owner.setName(rs.getString("Name"));
                 owner.setCIN(rs.getString("Cin"));
                 owner.setAddress(rs.getString("Adress"));
                 owner.setPhoneNumber(rs.getInt("PhoneNumber"));
-
                 listOwner.add(owner);
-
             }
             for(Owner owner : listOwner){
                 fout.write(owner.toString().getBytes());
@@ -224,15 +219,13 @@ public class OwnerDaoImp implements OwnerDao {
     }
 
     @Override
-    public void readFromStylSheetAndInsertInDatabase() {
+    public void readFromStylSheetAndInsertInDatabase(String path) {
         PreparedStatement ps = null;
-            try(FileInputStream fis = new FileInputStream(new File("src/main/resources/ownerInfo.xlsx")))
+            try(FileInputStream fis = new FileInputStream(new File(path)))
             {
                 ps = conn.prepareStatement("INSERT INTO owner (Name, CIN, Adress, PhoneNumber) VALUES (?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
 
                 XSSFWorkbook workbook = new XSSFWorkbook(fis);
-
-                // Get the first sheet
                 org.apache.poi.ss.usermodel.Sheet sheet = workbook.getSheetAt(0);
 
                 // Iterate over rows
@@ -243,10 +236,11 @@ public class OwnerDaoImp implements OwnerDao {
                     }
 
                     // Extract data from cells
-                    Cell nameCell = row.getCell(0);
-                    Cell cinCell = row.getCell(1);
-                    Cell addressCell = row.getCell(2);
-                    Cell phoneNumberCell = row.getCell(3);
+                    Cell nameCell = row.getCell(1);
+                    Cell cinCell = row.getCell(2);
+                    Cell addressCell = row.getCell(3);
+                    Cell phoneNumberCell = row.getCell(4);
+                    System.out.println(nameCell.getStringCellValue());
 
                     // Set values to the PreparedStatement
                     ps.setString(1, nameCell.getStringCellValue());
@@ -270,7 +264,6 @@ public class OwnerDaoImp implements OwnerDao {
                 }
 
                 workbook.close();
-                fis.close();
             }
             catch (IOException | SQLException e) {
                 e.printStackTrace();

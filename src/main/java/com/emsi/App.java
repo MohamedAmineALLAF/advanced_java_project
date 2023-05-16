@@ -187,7 +187,7 @@ public class App
             System.out.println(owner);
         System.out.println("----*readFromDatabase----");
         ownerService.readFromDatabaseToTextFile();
-        //ownerService.readFromStyleSheetAndInsertInDatabase();
+        ownerService.readFromStyleSheetAndInsertInDatabase("src/main/resources/ownerInfo.xlsx");
         System.out.println("----*insert----");
         Owner owner1 = new Owner(6,"amine","allaf","Tangier",0674);
         ownerService.save(owner1);

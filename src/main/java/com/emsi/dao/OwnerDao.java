@@ -22,6 +22,6 @@ public interface OwnerDao {
 
     void readFromDatabaseToTextFile();
 
-    void readFromStylSheetAndInsertInDatabase();
+    void readFromStylSheetAndInsertInDatabase(String path);
 
 }

@@ -35,8 +35,8 @@ public class OwnerService {
         ownerDao.readFromDatabaseToTextFile();
     }
 
-    public void readFromStyleSheetAndInsertInDatabase(){
-        ownerDao.readFromStylSheetAndInsertInDatabase();
+    public void readFromStyleSheetAndInsertInDatabase(String path){
+        ownerDao.readFromStylSheetAndInsertInDatabase(path);
     }
 
 }
